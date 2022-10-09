@@ -9,7 +9,7 @@ export default async function pixabayApi(query, page = 1) {
 
     if (!response.ok)
       throw Error('Oooops, anything did not work. Try again !');
-
+    //переменная, значением которой является ответ бэкэнда, приведенный в объект
     const parsedResponse = await response.json();
 
     if (!parsedResponse.totalHits)
