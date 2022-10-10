@@ -11,7 +11,7 @@ export default class Searchbar extends Component {
     return this.setState({ [target.name]: target.value });
   };
   //метод, который записывает/сохраняет в локальный стейт на 6 строке
-  //введенные данны. На 20 строке условие, если в инпут ничего не введено, 
+  //введенные данныe. На 20 строке условие, если в инпут ничего не введено, 
   //то выводится алерт
   submitForm = event => {
     event.preventDefault();

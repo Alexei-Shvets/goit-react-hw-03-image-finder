@@ -8,19 +8,19 @@ export default class Modal extends Component {
     largeImg: propTypes.string.isRequired,
     closeModal: propTypes.func.isRequired,
   };
-
+  //вешаем слушателя на виндов, чтобы вызвать функцию онПрессКей
   componentDidMount() {
     window.addEventListener('keydown', this.onPressKey);
   }
-
+  //размонтирование происходит сразу после нажатия эскейп, снимает слушателя
   componentWillUnmount() {
     window.removeEventListener('keydown', this.onPressKey);
   }
-
+  //закрывает модалку при нажатии вне картинки(на бэкдроп)
   onClickOverlay = ({ target, currentTarget }) => {
     if (target === currentTarget) this.props.closeModal(null);
   };
-
+  //функция для закрытия модалки по эскейпу
   onPressKey = event => {
     if (event.code === 'Escape') this.props.closeModal(null);
   };
